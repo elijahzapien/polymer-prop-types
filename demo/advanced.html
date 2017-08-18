@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>polymer-prop-types advanced demo</title>
+
+    <script src="../bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="../bower_components/polymer/polymer-element.html">
+    <link rel="import" href="../bower_components/polymer/lib/elements/dom-repeat.html">
+    <link rel="import" href="../polymer-prop-types.html">
+  </head>
+  <body>
+    <dom-module id="prop-types-advanced-demo">
+      <template>
+        <h1>Character List</h1>
+
+        <dom-repeat items="[[ users ]]">
+          <template>
+            <div class$="character-[[ item.id ]]">
+              <h2>[[ item.name ]]</h2>
+              <p>Age: [[ item.age ]]</p>
+              <p>Bio: [[ item.bio ]]</p>
+            </div>
+          </template>
+        <dom-repeat>
+      </template>
+    </dom-module>
+
+    <prop-types-advanced-demo
+      users='[{"id": 1, "name": "Billy Madison", "age": 25, "bio": "Bio one."},{"id": 2, "name": "Veronica Vaughn", "age": "27", "bio": "Bio two."}]'></prop-types-advanced-demo>
+
+    <script>
+      window.addEventListener('WebComponentsReady', function() {
+        class PropTypesAdvancedDemo extends PolymerPropTypes.propertyValidation(Polymer.Element) {
+          static get is() {
+            return 'prop-types-advanced-demo';
+          }
+
+          static get properties() {
+            return {
+              users: Array
+            }
+          }
+
+          static get propTypes() {
+            return {
+              users: PolymerPropTypes.PropTypes.arrayOf(PolymerPropTypes.PropTypes.shape({
+                id: PolymerPropTypes.PropTypes.number,
+                name: PolymerPropTypes.PropTypes.string,
+                age: PolymerPropTypes.PropTypes.number,
+                bio: PolymerPropTypes.PropTypes.string
+              }))
+            }
+          }
+        }
+
+        window.customElements.define(PropTypesAdvancedDemo.is, PropTypesAdvancedDemo);
+      });
+    </script>
+  </body>
+</html>
