@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>polymer-prop-types basic demo</title>
+
+    <script src="../bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="../bower_components/polymer/polymer-element.html">
+    <link rel="import" href="../polymer-prop-types.html">
+  </head>
+  <body>
+    <dom-module id="prop-types-basic-demo">
+      <template>
+        <h1>[[greeting]] [[name]]!</h1>
+        <p>You are [[age]] today</p>
+      </template>
+    </dom-module>
+
+    <prop-types-basic-demo
+      name='Howard'
+      age="twenty-two"
+      greeting="Hello"></prop-types-basic-demo>
+
+    <script>
+      window.addEventListener('WebComponentsReady', function() {
+        class PropTypesBasicDemo extends PolymerPropTypes.propertyValidation(Polymer.Element) {
+          static get is() {
+            return 'prop-types-basic-demo';
+          }
+
+          static get properties() {
+            return {
+              name: String,
+              age: Number,
+              greeting: String
+            }
+          }
+
+          static get propTypes() {
+            return {
+              name: PolymerPropTypes.PropTypes.string,
+              age: PolymerPropTypes.PropTypes.number,
+              greeting: PolymerPropTypes.PropTypes.string
+            }
+          }
+        }
+
+        window.customElements.define(PropTypesBasicDemo.is, PropTypesBasicDemo);
+      });
+    </script>
+  </body>
+</html>

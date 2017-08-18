@@ -1,0 +1,32 @@
+{
+  "name": "polymer-prop-types",
+  "version": "0.0.1",
+  "main": "polymer-prop-types.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elijahzapien/polymer-prop-types.git"
+  },
+  "scripts": {
+    "copy:html": "cp src/polymer-prop-types.html polymer-prop-types.html",
+    "copy": "npm run copy:html",
+    "build:html": "html-inline -i polymer-prop-types.html -o polymer-prop-types-inline.html",
+    "build:js:transform": "browserify src/polymer-prop-types.js -t babelify --outfile polymer-prop-types.js",
+    "build:js:browserify": "browserify src/polymer-prop-types.js --outfile polymer-prop-types.js",
+    "build:js:minify": "uglifyjs polymer-prop-types.js --compress --output polymer-prop-types.js",
+    "build:js": "npm run build:js:browserify && npm run build:js:minify",
+    "build": "npm run build:js && npm run build:html",
+    "post-build:html": "mv polymer-prop-types-inline.html polymer-prop-types.html",
+    "post-build": "npm run post-build:html",
+    "compile": "npm run copy && npm run build && npm run post-build"
+  },
+  "devDependencies": {
+    "babel-preset-env": "1.6.0",
+    "babel-preset-stage-1": "6.24.1",
+    "babelify": "7.3.0",
+    "browserify": "14.4.0",
+    "html-inline": "1.2.0",
+    "prop-types": "15.5.10",
+    "redux": "3.7.2",
+    "uglify-es": "3.0.27"
+  }
+}

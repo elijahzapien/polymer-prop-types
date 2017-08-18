@@ -1,0 +1,30 @@
+{
+  "name": "polymer-prop-types",
+  "version": "0.0.1",
+  "authors": [
+    "Elijah Zapien <elijah.zapien@gmail.com>"
+  ],
+  "description": "Property type validation for Polymer Web Components.",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "properties",
+    "props",
+    "prop-types"
+  ],
+  "main": "polymer-prop-types.html",
+  "license": "MIT",
+  "homepage": "https://github.com/elijahzapien/polymer-prop-types",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "tests",
+    "package.json"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#1.0.2",
+    "polymer": "Polymer/polymer#2.0.2"
+  }
+}
