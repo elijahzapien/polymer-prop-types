@@ -20,9 +20,11 @@ bower install --save polymer-prop-types
 ### NPM (TODO)
 
 ```js
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; // ES6
 import { propertyValidation } from 'polymer-prop-types'; // ES6
-var propertyValidation = require('polymer-prop-types').propertyValidation; // ES5 with npm
+
+var PropTypes = require('prop-types'); // ES5
+var propertyValidation = require('polymer-prop-types').propertyValidation; // ES5
 ```
 
 ### Bower
