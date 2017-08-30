@@ -1,7 +1,8 @@
 {
   "name": "polymer-prop-types",
-  "version": "0.0.1",
-  "main": "polymer-prop-types.js",
+  "version": "0.0.2",
+  "description": "Runtime type checking for Polymer properties.",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/elijahzapien/polymer-prop-types.git"
