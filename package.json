@@ -1,6 +1,6 @@
 {
   "name": "polymer-prop-types",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Runtime type checking for Polymer properties.",
   "main": "index.js",
   "repository": {
