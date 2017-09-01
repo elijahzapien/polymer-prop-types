@@ -1,9 +1,9 @@
 /**
- * CEPropTypes Mixin.
+ * Polymer property types
  */
 'use strict';
 
-var PropTypes = require('prop-types');
+const PropTypes = require('prop-types');
 
 // TODO:
 // Add `subclass._propertiesChanged` check. If missing add
@@ -21,7 +21,7 @@ module.exports = subclass => class extends subclass {
   attributeChangedCallback(name, old, value) {
     // TODO:
     // Add `toCamelCase` lodash method when adding attribute name.
-    // Attributes are dashed. Need camel case.
+    // Attributes are dashed. Ideally should be camel case.
 
     super.attributeChangedCallback(name, old, value);
 
