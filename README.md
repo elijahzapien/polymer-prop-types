@@ -3,7 +3,7 @@ Runtime type checking for Polymer properties
 
 ## Installation
 
-### NPM (TODO)
+### NPM
 
 ```shell
 npm install --save polymer-prop-types
@@ -17,14 +17,12 @@ bower install --save polymer-prop-types
 
 ## Importing
 
-### NPM (TODO)
+### NPM
 
 ```js
-import PropTypes from 'prop-types'; // ES6
-import { propertyValidation } from 'polymer-prop-types'; // ES6
+import { propTypeValidation } from 'polymer-prop-types'; // ES6
 
-var PropTypes = require('prop-types'); // ES5
-var propertyValidation = require('polymer-prop-types').propertyValidation; // ES5
+var propTypeValidation = require('polymer-prop-types').propTypeValidation; // ES5
 ```
 
 ### Bower
@@ -35,13 +33,13 @@ var propertyValidation = require('polymer-prop-types').propertyValidation; // ES
 
 ## Usage
 
-### NPM (TODO)
+### NPM
 
 ```js
 import PropTypes from 'prop-types';
-import { propertyValidation } from 'polymer-prop-types';
+import { propTypeValidation } from 'polymer-prop-types';
 
-class MyElement extends propertyValidation(Polymer.Element) {
+class MyElement extends propTypeValidation(Polymer.Element) {
   static get is() {
     return 'my-element';
   }
@@ -49,18 +47,18 @@ class MyElement extends propertyValidation(Polymer.Element) {
   static get properties() {
     return {
       users: Array
-    }
+    };
   }
 
   static get propTypes() {
     return {
       users: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number,
+        id: PropTypes.number.isRequired,
         name: PropTypes.string,
         age: PropTypes.number,
         bio: PropTypes.string
       }))
-    }
+    };
   }
 }
 
