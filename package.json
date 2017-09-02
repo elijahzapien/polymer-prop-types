@@ -1,18 +1,36 @@
 {
   "name": "polymer-prop-types",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Runtime type checking for Polymer properties.",
   "main": "index.js",
+  "license": "MIT",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "prop-type-validation.js",
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/elijahzapien/polymer-prop-types.git"
   },
+  "keywords": [
+    "web-components",
+    "polymer",
+    "properties",
+    "props",
+    "prop-types",
+    "validation"
+  ],
+  "bugs": {
+    "url": "https://github.com/elijahzapien/polymer-prop-types/issues"
+  },
   "scripts": {
-    "copy:html": "cp src/polymer-prop-types.html polymer-prop-types.html",
+    "copy:html": "cp src/bower/polymer-prop-types.html polymer-prop-types.html",
     "copy": "npm run copy:html",
     "build:html": "html-inline -i polymer-prop-types.html -o polymer-prop-types-inline.html",
-    "build:js:transform": "browserify src/polymer-prop-types.js -t babelify --outfile polymer-prop-types.js",
-    "build:js:browserify": "browserify src/polymer-prop-types.js --outfile polymer-prop-types.js",
+    "build:js:transform": "browserify src/bower/polymer-prop-types.js -t babelify --outfile polymer-prop-types.js",
+    "build:js:browserify": "browserify src/bower/polymer-prop-types.js --outfile polymer-prop-types.js",
     "build:js:minify": "uglifyjs polymer-prop-types.js --compress --output polymer-prop-types.js",
     "build:js": "npm run build:js:browserify && npm run build:js:minify",
     "build": "npm run build:js && npm run build:html",
