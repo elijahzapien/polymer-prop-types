@@ -73,7 +73,7 @@ If you prefer Bower, you can import and get it from `window.PolymerPropTypes` gl
 
 <script>
   (function () {
-    class MyElement extends PolymerPropTypes.propertyValidation(Polymer.Element) {
+    class MyElement extends PolymerPropTypes.propTypeValidation(Polymer.Element) {
       static get is() {
         return 'my-element';
       }
@@ -81,18 +81,18 @@ If you prefer Bower, you can import and get it from `window.PolymerPropTypes` gl
       static get properties() {
         return {
           users: Array
-        }
+        };
       }
 
       static get propTypes() {
         return {
           users: PolymerPropTypes.PropTypes.arrayOf(PolymerPropTypes.PropTypes.shape({
-            id: PolymerPropTypes.PropTypes.number,
+            id: PolymerPropTypes.PropTypes.number.isRequired,
             name: PolymerPropTypes.PropTypes.string,
             age: PolymerPropTypes.PropTypes.number,
             bio: PolymerPropTypes.PropTypes.string
           }))
-        }
+        };
       }
     }
 
